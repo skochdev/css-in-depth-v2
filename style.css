@@ -39,3 +39,7 @@ a[href$='.pdf'] {
     content: ' (PDF)';
   }
 }
+
+/* Select any element with an attribute with a substring 'val'*/
+
+a[href*='val']
