@@ -27,7 +27,15 @@ a[href^='mailto'] {
     content: ' (' attr(href) ')';
   }
 }
-/* v2 */
-a[href^='http']:after {
-  content: ' (' attr(href) ')';
+
+/* Ends with*/
+/*Add icon after each .pdf file*/
+a[href$='.pdf'] {
+  background-image: url(`pdficon.gif`);
+}
+
+@media print {
+  a[href$='.pdf']:after {
+    content: ' (PDF)';
+  }
 }

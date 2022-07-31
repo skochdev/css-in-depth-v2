@@ -38,3 +38,21 @@ a[href^='http']:after {
   content: ' (' attr(href) ')';
 }
 ```
+---
+
+* Target attribute that ends with some value
+```css
+a[href$='.pdf'] {
+  background-image: url(`pdficon.gif`);
+}
+```
+
+For example, you can also indicate on print that there is a PDF behind that text
+```css
+
+@media print {
+  a[href$='.pdf']:after {
+    content: ' (PDF)';
+  }
+}
+```
