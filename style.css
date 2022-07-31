@@ -1,0 +1,33 @@
+ol > li {
+  background-color: red;
+}
+
+li ~ li {
+  background-color: green;
+}
+
+h1 ~ p {
+  color: red;
+}
+
+p[lang|='en'] {
+  background-color: yellow;
+}
+
+/* Target elements which attribute starts with 'mailto'*/
+a[href^='mailto'] {
+  background-color: pink;
+}
+
+/* Make links addresses printable*/
+
+/* v1 */
+@media print {
+  a[href^='mailto']::after {
+    content: ' (' attr(href) ')';
+  }
+}
+/* v2 */
+a[href^='http']:after {
+  content: ' (' attr(href) ')';
+}
